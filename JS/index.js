@@ -44,17 +44,16 @@ $(document).ready(function () {
     $("#Ao").blur(kiemTraSoAo);
 
     function kiemTraClb() {
-        var i = 1;
-        let mauKT = /^([A-Z]{1}[a-z]\d)$/;
-        if ($("#clb").val() == "") {
-            $("#tbClb").html("Không để trống");
+        var kt=/^([A-Z]{1}[a-z]+)((\s{1}[A-Z]{1}[a-z]+){1,})(\s{1}[0-9]+)$/;
+        if($("#txtCLB").val()==""){
+            $("#tbCLB").html("Không được để trống");
             return false;
         }
-        if (!mauKT.test($("#clb").val())) {
-            $("#tbClb").html("Mỗi ký tự đầu viết hoa và số");
-            return true;
+        if(!kt.test($("#txtCLB").val())){
+            $("#tbCLB").html("Dùng chữ hoa đầu từ và số  ");
+            return false;
         }
-        $("#tbClb").html("*");
+        $("#tbCLB").html("*");
         return true;
     }
     $("#Clb").blur(kiemTraClb);
