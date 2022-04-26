@@ -45,15 +45,15 @@ $(document).ready(function () {
 
     function kiemTraClb() {
         var kt=/^([A-Z]{1}[a-z]+)((\s{1}[A-Z]{1}[a-z]+){1,})(\s{1}[0-9]+)$/;
-        if($("#txtCLB").val()==""){
-            $("#tbCLB").html("Không được để trống");
+        if($("#Clb").val()==""){
+            $("#tbClb").html("Không được để trống");
             return false;
         }
-        if(!kt.test($("#txtCLB").val())){
-            $("#tbCLB").html("Dùng chữ hoa đầu từ và số  ");
+        if(!kt.test($("#Clb").val())){
+            $("#tbClb").html("Dùng chữ hoa đầu từ và số  ");
             return false;
         }
-        $("#tbCLB").html("*");
+        $("#tbClb").html("*");
         return true;
     }
     $("#Clb").blur(kiemTraClb);
